@@ -26,3 +26,4 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 	[pattern: '/**',             filters: 'JOINED_FILTERS']
 ]
 
+api.temp.conversion.url='https://www.q88.com/WS/Q88WSInternal.asmx/ConvertTemperature?property={property}&val={value}'

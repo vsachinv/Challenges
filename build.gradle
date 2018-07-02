@@ -82,6 +82,7 @@ dependencies {
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
     compile 'org.grails.plugins:spring-security-core:3.2.2'
     compile 'org.grails.plugins:csv:1.0.1'
+    compile "org.grails:grails-datastore-rest-client"
 }
 
 bootRun {
