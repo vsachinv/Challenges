@@ -39,7 +39,8 @@
                 <li class="${controllerName == 'challengeOne' ? 'active' : ''}"><a
                         href="${createLink(controller: 'challengeOne')}">Challenge #1</a>
                 </li>
-                <li><a href="#challenge2">Challenge #2</a></li>
+                <li class="${controllerName == 'challengeTwo' ? 'active' : ''}"><a
+                        href="${createLink(controller: 'challengeTwo')}">Challenge #2</a></li>
                 <li><a href="#challenge3">Challenge #3</a></li>
             </ul>
             <ul class="nav navbar-nav pull-right">
@@ -48,7 +49,6 @@
                        aria-expanded="false"><i class="fa fa-user fa-fw"></i><sec:loggedInUserInfo
                             field="username"/> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Profile</a></li>
                         <li>
                             <a href="#" id="logout">Logout</a>
 
