@@ -27,3 +27,23 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 ]
 
 api.temp.conversion.url = 'https://www.q88.com/WS/Q88WSInternal.asmx/ConvertTemperature?property={property}&val={value}'
+
+environments {
+    production {
+        dataSource {
+            dbCreate = "update"
+            driverClassName = "org.postgresql.Driver"
+            dialect = 'org.hibernate.dialect.PostgreSQLDialect'
+            uri = new URI(System.env.DATABASE_URL ?: "postgres://test:test@localhost/test")
+            url = "jdbc:postgresql://" + uri.host + ":" + uri.port + uri.path
+            username = uri.userInfo.split(":")[0]
+            password = uri.userInfo.split(":")[1]
+        }
+        hibernate {
+            dialect = 'net.kaleidos.hibernate.PostgresqlExtensionsDialect'
+        }
+        grails.gorm.default.mapping = {
+            id generator: 'org.hibernate.id.enhanced.SequenceStyleGenerator', params: [prefer_sequence_per_entity: true]
+        }
+    }
+}
