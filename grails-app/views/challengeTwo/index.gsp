@@ -43,7 +43,7 @@
 
     <div id="result" style="display: none">
         <div class="row">
-            <div class="col-sm-2 ">&nbsp;</div>
+            <div class="col-sm-3 ">&nbsp;</div>
 
             <div class="col-sm-2">Celsius</div>
 
@@ -51,7 +51,7 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-2 ">&nbsp;</div>
+            <div class="col-sm-3 ">&nbsp;</div>
 
             <div class="col-sm-2">Fahrenheit</div>
 
@@ -60,7 +60,7 @@
     </div>
 
     <div id="resultLoader" class="row" style="display: none">
-        <div class="col-sm-3 ">
+        <div class="col-sm-4">
             <i class="fa fa-spinner fa-spin pull-right"></i>
         </div>
     </div>

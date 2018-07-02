@@ -16,4 +16,13 @@ class BootStrapService {
         UserRole.create(user2, role1, true)
         UserRole.create(user2, role3, true)
     }
+
+    void createCustomerData() {
+        Customer customer1 = new Customer(name: "Sachin", address: "India-110001").save(failOnError: true)
+        Customer customer2 = new Customer(name: "Anuj", address: "Dubai-123212").save(failOnError: true)
+        new PhoneNumber(number: "0123456789", isActive: false, customer: customer1).save(failOnError: true)
+        new PhoneNumber(number: "1124456789", isActive: true, customer: customer1).save(failOnError: true)
+        new PhoneNumber(number: "9123456789", isActive: false, customer: customer1).save(failOnError: true)
+        new PhoneNumber(number: "9123756789", isActive: false, customer: customer2).save(failOnError: true, flush: true)
+    }
 }
