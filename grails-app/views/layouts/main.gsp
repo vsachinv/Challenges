@@ -35,15 +35,18 @@
         <div id="navbar" class="navbar-collapse collapse">
 
             <ul class="nav navbar-nav">
-                <li class="active"><g:link class="homeButton" action="index">Home</g:link></li>
-                <li><a href="#challenge1">Challenge #1</a></li>
+                <li class="${!controllerName ? 'active' : ''}"><a class="homeButton" href="/">Home</a></li>
+                <li class="${controllerName == 'challengeOne' ? 'active' : ''}"><a
+                        href="${createLink(controller: 'challengeOne')}">Challenge #1</a>
+                </li>
                 <li><a href="#challenge2">Challenge #2</a></li>
                 <li><a href="#challenge3">Challenge #3</a></li>
             </ul>
             <ul class="nav navbar-nav pull-right">
                 <li class="dropdown" style="float: right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false"><i class="fa fa-user fa-fw"></i><sec:loggedInUserInfo field="username"/> <span class="caret"></span></a>
+                       aria-expanded="false"><i class="fa fa-user fa-fw"></i><sec:loggedInUserInfo
+                            field="username"/> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Profile</a></li>
                         <li>
@@ -60,6 +63,29 @@
 </nav>
 
 <div class="container theme-showcase" role="main">
+    <div style="padding-top: 65px">
+        <g:if test="${flash.success}">
+            <div class="alert alert-success" role="alert">
+                <strong>Well done!</strong> ${flash.success}
+            </div>
+        </g:if>
+        <g:if test="${flash.message}">
+            <div class="alert alert-info" role="alert">
+                <strong>Heads up!</strong> ${flash.message}
+            </div>
+        </g:if>
+        <g:if test="${flash.warning}">
+            <div class="alert alert-warning" role="alert">
+                <strong>Warning!</strong> ${flash.warning}
+            </div>
+        </g:if>
+        <g:if test="${flash.error}">
+            <div class="alert alert-danger" role="alert">
+                <strong>Oh snap!</strong> ${flash.error}
+            </div>
+        </g:if>
+    </div>
+
     <g:layoutBody/>
 </div>
 <g:javascript>

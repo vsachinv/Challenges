@@ -44,6 +44,7 @@ apply plugin: "com.siprell.plugins.bootstrap-framework"
 repositories {
     mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
+    maven { url "https://dl.bintray.com/sachinverma/plugins" }
 }
 
 dependencies {
@@ -80,6 +81,7 @@ dependencies {
     testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
     compile 'org.grails.plugins:spring-security-core:3.2.2'
+    compile 'org.grails.plugins:csv:1.0.1'
 }
 
 bootRun {
