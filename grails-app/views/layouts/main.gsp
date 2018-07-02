@@ -41,7 +41,8 @@
                 </li>
                 <li class="${controllerName == 'challengeTwo' ? 'active' : ''}"><a
                         href="${createLink(controller: 'challengeTwo')}">Challenge #2</a></li>
-                <li><a href="#challenge3">Challenge #3</a></li>
+                <li class="${controllerName == 'challengeThree' ? 'active' : ''}"><a
+                        href="${createLink(controller: 'challengeThree')}">Challenge #3</a></li>
             </ul>
             <ul class="nav navbar-nav pull-right">
                 <li class="dropdown" style="float: right">
